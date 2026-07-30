@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>Task Deletion Confirmation & Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background: #e63946;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Task Manager</h1>
+  <button onclick="deleteTask()"> Delete Task</button>
+
+  <script>
+    function deleteTask() {
+      alert("Heads up!\nYou are about to delete a task.");
+
+     
+      let sure = confirm(" Are you really sure you want to delete this task?");
+
+      if (sure) {
+        
+        let reason = prompt(" Why are you deleting this task?\nExample: Done, Duplicate, Wrong entry");
+
+        if (reason && reason.trim() !== "") {
+          alert("Task Deleted!\nReason saved: " + reason);
+        } else {
+          alert(" Deletion stopped. No reason given.");
+        }
+      } else {
+        alert(" Phew! Task is safe.");
+      }
+    }
+  </script>
+
+</body>
+</html>
